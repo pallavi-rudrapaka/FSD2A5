@@ -24,9 +24,9 @@ class FixedDeposit {
         console.log(`---------\n`);
     }
 }
-const standardFD = new FixedDeposit("Pallavi", 90000);
-const seniorcitizenFD = new FixedDeposit("Gotham Kumar", 80000);
-standardFD.displayDetails();
-seniorcitizenFD.displayDetails();
-seniorcitizenFD.amount = 30000;
-console.log(`updated maturity for anjali:${seniorcitizenFD.calculate()}`);
+const first = new FixedDeposit("Pallavi", 90000, 8.1, 6);
+const second = new FixedDeposit("Gowtham Kumar", 80000);
+first.displayDetails();
+second.displayDetails();
+second.amount = 30000;
+console.log(`updated maturity for anjali:${second.calculate()}`);

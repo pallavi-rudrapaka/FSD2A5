@@ -5,11 +5,11 @@ class FixedDeposit{
     public years: number;
     constructor(name:string,amount:number);
     constructor(name:string,amount:number,rate:number,years:number);
-    constructor(name:string,amount:number,rate?:number,years?:number){
+    constructor(name:string,amount:number,rate? :number,years?:number){
     this.customerName=name;
     this.amount=amount;
     this.interest =rate?? 9.3;
-    this.years=years??1;
+    this.years=years?? 1 ;
     }
     public calculate():number{
         const interests=(this.amount*this.interest*this.years)/100;
@@ -25,9 +25,9 @@ class FixedDeposit{
         console.log(`---------\n`);
     }
 }
-const standardFD=new FixedDeposit("Pallavi",90000);
-const seniorcitizenFD=new FixedDeposit("Gotham Kumar",80000);
-standardFD.displayDetails();
-seniorcitizenFD.displayDetails();
-seniorcitizenFD.amount=30000;
-console.log(`updated maturity for anjali:${seniorcitizenFD.calculate()}`);
+const first=new FixedDeposit("Pallavi",90000,8.1,6);
+const second=new FixedDeposit("Gowtham Kumar",80000);
+first.displayDetails();
+second.displayDetails();
+second.amount=30000;//this line demonstrates object propertirs can also be modified after creation
+console.log(`updated maturity for Gowtham:${second.calculate()}`);
