@@ -1,24 +1,37 @@
-class BankBranch{
-    public static readonly bankName:string="SBI Bank";
-    public static totalAccountsCreated:number=0;
-    public readonly accountNumber:string;
-    public accountHolder:string;
-    constructor(name:string,accNo:string){
-    this.accountHolder=name;
-    this.accountNumber=accNo;
-    BankBranch.totalAccountsCreated++;
+class College {
+
+    public static readonly collegeName: string = "SVECW";
+    public static totalStudents: number = 0;
+
+    public readonly studentId: string;
+    public studentName: string;
+
+    constructor(name: string, id: string) {
+        this.studentName = name;
+        this.studentId = id;
+
+        College.totalStudents++;
     }
-    public static getBankPolicy():void{
-        console.log(`Welcome to ${this.bankName}.All FDs are subject to market risks.`);
+
+    public static showCollegeInfo(): void {
+        console.log("Welcome to " + College.collegeName);
+        console.log("Admissions are open for the new academic year.");
     }
-    public showAccount():void{
-        console.log(`Holder:${this.accountHolder}`);
-        console.log(`Acc No:${this.accountNumber}`);
+
+    public displayStudent(): void {
+        console.log("Student Name : " + this.studentName);
+        console.log("Student ID   : " + this.studentId);
     }
-} 
-console.log(BankBranch.bankName);
-BankBranch.getBankPolicy();
-const user1=new BankBranch("Auresh Raina","SBI09775676");
-const user2=new BankBranch("fathik kumaeh","SBI8758576");
-console.log(user1.accountNumber);
-console.log(`Total Accounts in System:${BankBranch.totalAccountsCreated}`);
+}
+
+console.log("College Name : " + College.collegeName);
+
+College.showCollegeInfo();
+
+const student1 = new College("Pallavi", "22A81A0501");
+const student2 = new College("Anusha", "22A81A0502");
+
+student1.displayStudent();
+student2.displayStudent();
+
+console.log("Total Students : " + College.totalStudents);
