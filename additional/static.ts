@@ -1,0 +1,27 @@
+class Student {
+
+    static college: string = "SVECW";
+
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    display(): void {
+        console.log("Name: " + this.name);
+        console.log("College: " + Student.college);
+    }
+
+    static showCollege(): void {
+        console.log("College Name: " + Student.college);
+    }
+}
+
+let s1 = new Student("Pallavi");
+let s2 = new Student("Anusha");
+
+s1.display();
+s2.display();
+
+Student.showCollege();
